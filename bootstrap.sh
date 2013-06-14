@@ -2,7 +2,7 @@
 apt-get update
 export DEBIAN_FRONTEND=noninteractive
 apt-get install -y mysql-server-5.5 libapache2-mod-php5 \
-  php5-cli php5-mysql vim \
+  php5-cli php5-mysql vim snmp-mibs-downloader \
   php5-gd php5-snmp php-pear snmp graphviz subversion mysql-server \
   mysql-client rrdtool fping imagemagick whois mtr-tiny nmap ipmitool
 
@@ -15,9 +15,7 @@ fi
 cd /opt/observium
 mysql -u root -e "CREATE DATABASE observium;"
 
-if [ ! -f "config.php" ]; then
-  cat config.php.default | sed s/PASSWORD//g | sed s/USERNAME/root/g > config.php
-fi
+cat config.php.default | sed s/PASSWORD//g | sed s/USERNAME/root/g > config.php
 
 php includes/sql-schema/update.php
 mkdir graphs rrd
