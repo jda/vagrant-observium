@@ -6,7 +6,7 @@ apt-get install -y mysql-server-5.5 libapache2-mod-php5 \
   php5-gd php5-snmp php-pear snmp graphviz subversion mysql-server \
   mysql-client rrdtool fping imagemagick whois mtr-tiny nmap ipmitool
 
-if [ !-f "/opt/observium/README" ]; then
+if [ ! -f "/opt/observium/README" ]; then
   svn co http://observium.org/svn/observer/trunk/ /opt/observium
 else
   svn up
