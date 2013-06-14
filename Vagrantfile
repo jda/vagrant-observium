@@ -40,7 +40,7 @@ Vagrant.configure("2") do |config|
   # information on available options.
 
   config.vm.network :forwarded_port, guest: 80, host: 8080
-  config.vm.synced_folder "observium/", "/opt/observium"
+  #config.vm.synced_folder "observium/", "/opt/observium"
   config.vm.synced_folder "misc/", "/opt/misc"
   config.vm.provision :shell, :path => "bootstrap.sh"
 end
