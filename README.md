@@ -1,4 +1,4 @@
-[Vagrant](http://www.vagrantup.com/) envrionment for working on [Observium](http://www.observium.org).
+Quick and dirty [Vagrant](http://www.vagrantup.com/) envrionment for working on [Observium](http://www.observium.org).
 
 ## Usage
 Assuming you already have virtualbox and vagrant installed...
