@@ -20,12 +20,17 @@ cd /opt/observium
 mysql -u root -e "CREATE DATABASE observium;"
 
 cat config.php.default | sed s/PASSWORD//g | sed s/USERNAME/root/g > config.php
+echo "\$config['rrd_dir']       = \"/opt/observium-rrd\";">>config.php
 
 php includes/update/update.php
 
-mkdir graphs rrd logs
-chown www-data:www-data graphs rrd
-chmod -R 777 graphs rrd
+mkdir graphs logs
+chown www-data:www-data graphs
+chmod -R 777 graphs
+
+mkdir /opt/observium-rrd
+chown www-data:www-data /opt/observium-rrd
+chmod -R 777 /opt/observium-rrd
 
 rm /etc/apache2/sites-available/default
 cp /opt/misc/apache /etc/apache2/sites-available/default
